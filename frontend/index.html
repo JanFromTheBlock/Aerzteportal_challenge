@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/frontend/styles.css" />
+    <script src="/frontend/scripts.js"></script>
+    <title>Ärzteportal</title>
+  </head>
+  <body onload="logout()">
+    <div id="login" class="center">
+        <form action="#">
+            <h2>Login</h2>
+        <input required id="username-login" type="text" placeholder="Username">
+        <input required type="password" id="password-login" placeholder="Password">
+        <button onclick="login()" type="submit">Login</button>
+        </form>
+    </div>
+    <div id="logout" class="center d-none">
+        <button onclick="logout()">Logout</button>
+    </div>
+    <section id="appointments">
+        <div class="line"></div>
+      <div><button onclick="get('appointments/')">Get Appointments</button></div>
+        <form action="#">
+            <input required id="doctor-id" type="number" placeholder="Doctor ID" />
+            <input required id="client-id" type="number" placeholder="Client ID" />
+            <input required id="title_app" type="text" placeholder="Title">
+            <input required id="description" type="text" placeholder="Description">
+            <input required id="date" type="date">
+            <button onclick="createAppointment()" type="submit">Create Appointment</button>
+        </form>
+      </div>
+      <div>
+        <form action="#">
+            <input required id="appointments/" type="text" placeholder="Appointment-ID" />
+            <button onclick="deleteObject('appointments/')">Delete</button>
+        </form>
+      </div>
+    </section>
+    <section id="doctor">
+        <div class="line"></div>
+      <div><button onclick="get('doctors/')">Get Doctors</button></div>
+      <div>
+        <form action="#">
+            <input required id="username" type="text" placeholder="Username" />
+            <input required id="password" type="password" placeholder="Password" />
+          <input required id="title" type="text" placeholder="Title" />
+          <input required id="firstname" type="text" placeholder="Firstname" />
+          <input required id="lastname" type="text" placeholder="Lastname" />
+          <input required id="speciality" type="text" placeholder="Speciality" />
+          <button onclick="createDoctor()" type="submit">Create Doctor</button>
+        </form>
+      </div>
+      <div>
+        <form action="#">
+            <input required id="doctors/" type="text" placeholder="User ID" />
+        <button onclick="deleteObject('doctors/')" >Delete</button>
+        </form>
+      </div>
+    </section>
+    <section id="client">
+        <div class="line"></div>
+      <div><button onclick="get('patients/')">Get Clients</button></div>
+        <form action="#">
+            <input required id="username-client" type="text" placeholder="Username">
+            <input required id="password-client" type="password" placeholder="Password">
+            <input required id="firstname-client" type="text" placeholder="Firstname" />
+            <input required id="lastname-client" type="text" placeholder="Lastname" />
+            <button onclick="createClient()" type="submit">Create Client</button>
+        </form>
+      </div>
+      <div>
+        <form action="#">
+            <input required id="patients/" type="text" placeholder="User-ID" />
+            <button onclick="deleteObject('patients/')">Delete</button>
+        </form>
+      </div>
+    </section>
+</section>
+  </body>
+</html>
